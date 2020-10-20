@@ -10,7 +10,7 @@ const Button = styled.button(({ theme }: ThemeProps) => ({
 
 const ColorSchemeToggle = () => {
   const [colorScheme, setColorScheme] = useColorScheme()
-  // if (!colorScheme) return null
+  if (!colorScheme) return null
 
   return (
     <Button

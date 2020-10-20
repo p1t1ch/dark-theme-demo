@@ -11,11 +11,11 @@ interface ColorSchemeProviderProps {
 const ColorSchemeProvider = ({ children }: ColorSchemeProviderProps) => {
   const [colorScheme, setColorScheme] = useState<ColorSchemeTypes | undefined>(undefined)
 
-  // useEffect(() => {
-  //   const root = document.documentElement
-  //   const initialColorScheme = root.style.getPropertyValue(INITIAL_COLOR_SCHEME_CSS_VAR) as ColorSchemeTypes
-  //   setColorScheme(initialColorScheme)
-  // }, [])
+  useEffect(() => {
+    const root = document.documentElement
+    const initialColorScheme = root.style.getPropertyValue(INITIAL_COLOR_SCHEME_CSS_VAR) as ColorSchemeTypes
+    setColorScheme(initialColorScheme)
+  }, [])
 
   const saveColorScheme = (newColorScheme: ColorSchemeTypes) => {
     window.localStorage.setItem(COLOR_SCHEME_LC_KEY, newColorScheme)
