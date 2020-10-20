@@ -2,14 +2,10 @@
 // In project they are available via useTheme hook or prop in styled components
 
 const colors = {
-  purple: '#639',
-  purpleLight: '#fcfaff',
-  purpleDark: '#362066',
-}
-
-const breakpoints = {
-  lg: 1440,
-  sm: 768,
+  black: '#2b2b2b',
+  white: '#fff',
+  darkPurple: '#6d4672',
+  lightPurple: '#ea9ff4',
 }
 
 const typography = {
@@ -42,39 +38,12 @@ const typography = {
       fontSize: 'clamp(1.5rem, 3.25vw ,2.25rem)', // 24-36
       lineHeight: 1.5,
     },
-    h2: {
-      fontWeight: 700,
-      fontSize: 'clamp(1.125rem, 2.25vw ,1.75rem)', // 18-28
-      lineHeight: 1.5,
-    },
-    title: {
-      fontWeight: 700,
-      fontSize: 'clamp(1.5rem, 4vw ,2.5rem)', // 24-40
-      lineHeight: 1.5,
-    },
-    nav: {
-      fontWeight: 200,
-      fontSize: 'clamp(1.125rem, 2.75vw ,1.5rem)', // 18-24
-      lineHeight: 1.5,
-    },
   },
-}
-
-const shadows = {
-  basic: `0 0 4px 1px ${colors.purpleDark}`,
-}
-
-const transitions = {
-  short: '200ms ease-in-out',
-  long: '500ms ease-in-out',
 }
 
 const theme = {
   colors,
-  breakpoints,
   typography,
-  shadows,
-  transitions,
 }
 
 // Use this type with useTheme hook
