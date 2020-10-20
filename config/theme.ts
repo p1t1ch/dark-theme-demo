@@ -8,6 +8,24 @@ const colors = {
   lightPurple: '#ea9ff4',
 }
 
+export const themeColors = {
+  primary: {
+    light: colors.black,
+    dark: colors.white,
+  },
+  secondary: {
+    light: colors.white,
+    dark: colors.black,
+  },
+  active: {
+    light: colors.darkPurple,
+    dark: colors.lightPurple,
+  },
+}
+
+export type ColorSchemeTypes = 'light' | 'dark'
+export type ColorSchemeVars = keyof typeof themeColors
+
 const typography = {
   family: 'Manrope',
   stacks: {
@@ -30,13 +48,18 @@ const typography = {
   },
   styles: {
     body: {
-      fontSize: 'clamp(1rem, 2.25vw ,1.125rem)', // 16-18
-      lineHeight: 1.5,
+      fontSize: 'clamp(1.25rem, 2.5vw, 1.375rem)', // 22-20
+      lineHeight: 1.7,
     },
     h1: {
       fontWeight: 700,
-      fontSize: 'clamp(1.5rem, 3.25vw ,2.25rem)', // 24-36
-      lineHeight: 1.5,
+      fontSize: 'clamp(2.4375rem, 5vw, 4.75rem)', // 76-39
+      lineHeight: 1.1,
+    },
+    title: {
+      fontWeight: 600,
+      fontSize: 'clamp(1.125rem, 2.5vw, 1.5625rem)', // 25-18
+      lineHeight: 1.4,
     },
   },
 }

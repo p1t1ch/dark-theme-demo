@@ -5,6 +5,7 @@ import { useTheme } from 'emotion-theming'
 import { buttons, normalize } from 'polished'
 import { Theme } from '@theme'
 import '@/fonts/index.css'
+import colorVar from '@/utils/colorVar'
 
 const GlobalStyles = () => {
   const theme = useTheme<Theme>()
@@ -14,12 +15,17 @@ const GlobalStyles = () => {
       styles={[
         ...normalize(),
         {
+          ':root': {
+            '--color-primary': theme.colors.black,
+            '--color-secondary': theme.colors.white,
+            '--color-active': theme.colors.darkPurple,
+          },
           '*, *::before, *::after': {
             boxSizing: 'border-box',
           },
           '::selection': {
-            backgroundColor: theme.colors.black,
-            color: theme.colors.white,
+            backgroundColor: colorVar('primary'),
+            color: colorVar('secondary'),
           },
           html: {
             fontFamily: [theme.typography.family, ...theme.typography.stacks.sansSerif].join(', '),
@@ -30,31 +36,35 @@ const GlobalStyles = () => {
           },
           body: {
             ...theme.typography.styles.body,
-            backgroundColor: theme.colors.white,
-            color: theme.colors.black,
+            backgroundColor: colorVar('secondary'),
+            color: colorVar('primary'),
           },
           'h1, h2, h3, h4, h5, h6, p, ol, ul, dl, dd, hr, blockquote, figure': {
             margin: 0,
             padding: 0,
           },
-          h1: theme.typography.styles.h1,
+          h1: {
+            ...theme.typography.styles.h1,
+            textAlign: 'center',
+            marginBottom: '2rem',
+          },
           '.js-focus-visible :focus:not(.focus-visible)': {
             outline: 'none',
           },
           ':focus': {
-            outline: `3px solid ${theme.colors.black}`,
-            outlineOffset: 2,
+            outline: `0.25rem solid ${colorVar('active')}`,
+            outlineOffset: '0.125rem',
           },
           [buttons()]: {
             border: 'none',
             padding: 0,
             background: 'none',
             cursor: 'pointer',
-            color: theme.colors.black,
+            color: colorVar('primary'),
           },
           a: {
             textDecoration: 'none',
-            color: theme.colors.black,
+            color: colorVar('primary'),
           },
           strong: {
             fontWeight: 700,
@@ -63,7 +73,7 @@ const GlobalStyles = () => {
             fill: 'currentColor',
           },
           li: {
-            listStyle: 'none',
+            listStylePosition: 'inside',
           },
         },
       ]}

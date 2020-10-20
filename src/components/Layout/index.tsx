@@ -1,28 +1,28 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { padding } from 'polished'
+import colorVar from '@/utils/colorVar'
 import { ThemeProps } from '@theme'
 
 const Header = styled.header(({ theme }: ThemeProps) => ({
-  display: 'grid',
-  gridTemplateColumns: 'repeat(2, 1fr)',
-  gridGap: '2rem',
+  display: 'flex',
+  justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '1rem',
-  backgroundColor: theme.colors.black,
-  color: theme.colors.white,
+  padding: '1rem 2rem',
+  borderBottom: `0.25rem solid ${colorVar('primary')}`,
+  ...theme.typography.styles.title,
 }))
 
 const Main = styled.main(() => ({
-  ...padding('3rem', '1rem'),
+  margin: '0 auto',
+  padding: '2rem',
 }))
 
 const Footer = styled.footer(({ theme }: ThemeProps) => ({
   display: 'grid',
   placeItems: 'center',
-  padding: '1rem',
-  backgroundColor: theme.colors.black,
-  color: theme.colors.white,
+  padding: '1rem 2rem',
+  borderTop: `0.25rem solid ${colorVar('primary')}`,
+  ...theme.typography.styles.title,
 }))
 
 interface LayoutProps {
@@ -33,7 +33,10 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div css={{ display: 'grid', gridTemplateRows: 'auto 1fr auto', minHeight: '100vh' }}>
-      <Header>Header</Header>
+      <Header>
+        <div>Header</div>
+        <div>Toggle</div>
+      </Header>
       <Main>{children}</Main>
       <Footer>Footer</Footer>
     </div>
