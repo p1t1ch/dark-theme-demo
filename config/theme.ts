@@ -58,8 +58,11 @@ const typography = {
     },
     title: {
       fontWeight: 600,
-      fontSize: 'clamp(1.125rem, 2.5vw, 1.5625rem)', // 25-18
+      fontSize: 'clamp(1.25rem, 2.5vw, 1.5625rem)', // 25-20
       lineHeight: 1.4,
+    },
+    darkMode: {
+      fontSize: '3.0625rem', // 49
     },
   },
 }

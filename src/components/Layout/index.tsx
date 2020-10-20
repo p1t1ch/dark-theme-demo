@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import colorVar from '@/utils/colorVar'
 import { ThemeProps } from '@theme'
+import ColorSchemeToggle from '@/components/ColorSchemeToggle'
 
 const Header = styled.header(({ theme }: ThemeProps) => ({
   display: 'flex',
@@ -35,7 +36,7 @@ const Layout = ({ children }: LayoutProps) => {
     <div css={{ display: 'grid', gridTemplateRows: 'auto 1fr auto', minHeight: '100vh' }}>
       <Header>
         <div>Header</div>
-        <div>Toggle</div>
+        <ColorSchemeToggle />
       </Header>
       <Main>{children}</Main>
       <Footer>Footer</Footer>

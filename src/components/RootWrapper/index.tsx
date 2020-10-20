@@ -2,6 +2,7 @@ import React from 'react'
 import { ThemeProvider } from 'emotion-theming'
 import GlobalStyles from '@/components/GlobalStyles'
 import theme from '@theme'
+import ColorSchemeProvider from '@/components/ColorSchemeProvider'
 
 interface RootWrapperProps {
   /** Site content */
@@ -10,10 +11,12 @@ interface RootWrapperProps {
 
 const RootWrapper = ({ children }: RootWrapperProps) => {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      {children}
-    </ThemeProvider>
+    <ColorSchemeProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        {children}
+      </ThemeProvider>
+    </ColorSchemeProvider>
   )
 }
 
