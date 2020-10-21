@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import colorVar from '@/utils/colorVar'
 import { ThemeProps } from '@theme'
 import ColorSchemeToggle from '@/components/ColorSchemeToggle'
+import { ReactComponent as GithubIcon } from '@/icons/github.svg'
 
 const Header = styled.header(({ theme }: ThemeProps) => ({
   display: 'flex',
@@ -15,7 +16,7 @@ const Header = styled.header(({ theme }: ThemeProps) => ({
 
 const Main = styled.main(() => ({
   margin: '0 auto',
-  padding: '2rem',
+  padding: '3rem 2rem',
 }))
 
 const Footer = styled.footer(({ theme }: ThemeProps) => ({
@@ -35,11 +36,15 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div css={{ display: 'grid', gridTemplateRows: 'auto 1fr auto', minHeight: '100vh' }}>
       <Header>
-        <div>Header</div>
+        <h1>Dark theme demo</h1>
         <ColorSchemeToggle />
       </Header>
       <Main>{children}</Main>
-      <Footer>Footer</Footer>
+      <Footer>
+        <a href="https://github.com/p1t1ch/dark-theme-demo" target="_blank" rel="noopener noreferrer">
+          <GithubIcon width={48} title="Project page on Github" />
+        </a>
+      </Footer>
     </div>
   )
 }

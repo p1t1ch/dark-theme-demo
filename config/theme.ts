@@ -51,11 +51,6 @@ const typography = {
       fontSize: 'clamp(1.25rem, 2.5vw, 1.375rem)', // 22-20
       lineHeight: 1.7,
     },
-    h1: {
-      fontWeight: 700,
-      fontSize: 'clamp(2.4375rem, 5vw, 4.75rem)', // 76-39
-      lineHeight: 1.1,
-    },
     title: {
       fontWeight: 600,
       fontSize: 'clamp(1.25rem, 2.5vw, 1.5625rem)', // 25-20

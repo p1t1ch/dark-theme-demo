@@ -43,11 +43,6 @@ const GlobalStyles = () => {
             margin: 0,
             padding: 0,
           },
-          h1: {
-            ...theme.typography.styles.h1,
-            textAlign: 'center',
-            marginBottom: '2rem',
-          },
           '.js-focus-visible :focus:not(.focus-visible)': {
             outline: 'none',
           },

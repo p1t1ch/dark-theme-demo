@@ -6,7 +6,6 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo />
-      <h1>Dark theme demo</h1>
       <ol>
         <li>Build with Gatsby, React, Typescript, Emotion</li>
         <li>Use CSS variables for theming</li>
